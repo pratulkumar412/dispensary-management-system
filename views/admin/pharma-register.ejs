@@ -1,0 +1,103 @@
+<%- include('../partials/header'); -%>
+
+        <!-- <form acction="/register" method="POST">
+            <div class="form-group">
+            <label>Name</label> 
+            <input type="text" class="form-control" placeholder="" name="name"><br>
+            <label>Email ID</label>
+            <input type="email" class="form-control" placeholder="" name="email"><br>
+            <label>Phone No.</label>
+            <input type="text" class="form-control" name="phone">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+
+        </form> -->
+        <br>
+        <form class="form-horizontal" action='/pharma-register' method="POST">
+            <fieldset>
+              <div id="legend">
+                <legend class="" style="font-size: 40px; text-align: center;">Pharmacist Registration </legend>
+              </div>
+              <div class="control-group">
+                <!-- Username -->
+                <label class="control-label">Full name </label>
+                <div class="controls">
+                  <input type="text" id="username" name="name" placeholder="" class="input-xlarge">
+                  <!-- <p class="help-block"></p> -->
+                </div>
+              </div>
+              <br>
+              <div class="control-group">
+                <!-- E-mail -->
+                <label class="control-label" for="email">E-mail</label>
+                <div class="controls">
+                  <input type="email" id="email" name="email" placeholder="e.g. abcd@gmail.com" class="input-xlarge">
+                </div>
+              </div>
+              <br>
+              <div class="control-group">
+                <label class="control-label">Phone No.</label>
+                <div class="controls">
+                  <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge">
+                </div>
+              </div>
+              <br>
+              <div class="control-group">
+                <!-- Password-->
+                <label class="control-label">Password</label>
+                <div class="controls">
+                  <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                  <p class="help-block">At least 6 characters</p>
+                </div>
+              </div>
+           
+              <div class="control-group">
+                <!-- Password -->
+                <label class="control-label">Renter Password</label>
+                <div class="controls">
+                  <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
+                  <p class="help-block">Please confirm password</p>
+                </div>
+              </div>
+              <br>
+              <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                  <!-- <button class="btn btn-success" onclick="return checkPassword()">Register</button> -->
+                  <input type="submit" id="btnsubmit" class="btn btn-primary" value="submit" onclick="return Validate()">
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+          <script type="text/javascript">
+            function Validate() {
+              var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+                var phonenumber = document.getElementById("phone").value;
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("password_confirm").value;
+                if(phonenumber.length!=10)
+                {
+                    alert("Invalid phone number!");
+                    return false;
+                }
+                else if(password.length<6)
+                {
+                    alert("Invalid password");
+                    return false;
+                }
+                else if (password != confirmPassword) {
+                    alert("Passwords do not match");
+                    return false;
+                }
+                else if(password.match(paswd)){
+                  alert("Successfully registered");
+                  return true;
+                }
+                alert("Choose strong password");
+                return false;
+            }
+        </script>
+
+<%- include("../partials/footer"); -%>

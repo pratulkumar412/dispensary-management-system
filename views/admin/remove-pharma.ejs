@@ -1,0 +1,57 @@
+<%- include('../partials/header'); -%>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<div class="page-content p-5" id="content" style="background-color: aliceblue; margin-left: 100px; margin-top: 10px; width: 900px;border-radius: 5px;">
+    <table class="table table-striped">
+        <h1 style="text-align: center; font-size: 40px;">Pharmacist list</h1>
+      <thead>
+        <tr>
+          <th scope="col">Pharmacist ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Phone number</th>          
+        </tr>
+      </thead>
+
+      <tbody>
+          <%for(var i=0;i<data.length;i++){ %>
+          <tr>
+              <td><%=data[i].id%></td>
+              <td><%=data[i].name%></td>
+              <td><%=data[i].email%></td>
+              <td><%=data[i].phone%></td>
+          </tr>
+          <% } %>
+        </tbody>
+    </table>
+
+  </div>
+  <br><br><br>
+  <form action="/remove-pharma" method="POST" name="form" style="width: 583px; margin-left: 200px;">
+    <label style="font-size: 20px;">select the ID of pharmacist you want to remove :</label> 
+    <select id="pharma" name="pharma">
+        <option value="0">---Select one---</option>
+        <% for(var i=0;i<data.length;i++){ %>
+            <option value="<%=data[i].id%>"><%=data[i].id%></option>
+        <% } %>
+    </select><br>
+    <input type="submit" onclick="return validate()" style="float: right;">
+</form>
+
+
+<script>
+    function validate(){
+        var temp = document.forms["form"]["pharma"].value;
+        if(temp==0)
+            return false;
+        return true;
+    }
+</script>
+<%- include("../partials/footer"); -%>

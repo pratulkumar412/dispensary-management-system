@@ -1,0 +1,37 @@
+<%- include('../partials/header'); -%>
+
+<div class="page-content p-5" id="content" style="background-color: aliceblue; margin-left: 20px; margin-top: 100px; width: 1100px;border-radius: 5px;">
+    <table class="table table-striped">
+        <h1 style="text-align: center; font-size: 40px;">Customers list</h1>
+      <thead>
+        <tr>
+          <th scope="col">Registration no. </th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Drug ID</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Date and Time</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+          <%for(var i=0;i<data.length;i++){ %>
+          <tr>
+              <td><%=data[i].rollno%></td>
+              <td><%=data[i].name%></td>
+              <td><%=data[i].hostel%></td>
+              <td><%=data[i].drugid%></td>
+              <td><%=data[i].units%> </td>
+              <td><%=moment(data[i].time).format('MMM-DD-YYYY HH:MM')%> </td>
+          </tr>
+          <% } %>
+      </tbody>
+      
+    </table>
+
+</body>
+</html>
+
+
+<!-- <%- include("../partials/footer"); -%> -->

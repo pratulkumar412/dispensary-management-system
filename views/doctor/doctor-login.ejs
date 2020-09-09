@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Doctor-LogIn
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <style>
+            body {
+              background-color: rgba(85, 75, 75, 0.096);
+            }
+            </style> -->
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default" style="height:100px; padding-top:25px">
+            <div class="container">
+              <div class="navbar-header">
+                <p class="navbar-brand" style="font-size: 40px;">NIT Jamshedpur</p>
+              </div>
+                <ul class="nav navbar-nav navbar-right">
+                  <!-- 6 -->
+                  <li id="home"><a href="/">HOME</a></li>
+                  <li id="about"><a href="/aboutus-admin">ABOUT US</a></li>
+                  <!-- <li id="contact"><a href="/contact">CONTACT US</a></li> -->
+                </ul>
+            </div>
+          </nav>
+          <div class="container">
+        <h2 style="text-align: center;">Hello Doctor! Sign in to your account</h2>
+        <form action="/doctor-login" method="POST" style="height: 450px; width: 400px; background-color: #1abc9c;; border-radius: 10px; margin-left: 370px; margin-top: 40px; box-shadow: 1px 1px 4px 4px;" >
+            <div class="form-group">
+            <label style="color: azure; text-align: center; font-size: 40px; margin-left: 120px;">Sign in</label>
+            <br><br><br><br>
+            <label style="font-size: 10px; margin-left: 100px; color: red;"> <%= wrong %> </label><br>
+            <label style="font-size: 20px; margin-left: 140px;">Email id : </label> 
+            <input type="email" class="form-control" placeholder="" name="email" style="width: 60%; margin-left: 70px; font-size: 15px;"><br><br>
+            <label style="font-size: 20px; margin-left: 130px;">Password :</label>
+            <input type="password" class="form-control" placeholder="" name="password" style="width: 60%;  margin-left: 70px; font-size: 20px;"><br>
+            </div>
+            <br>
+            <button style="height: 50px; width: 100px; margin-left: 140px; font-size: 20px;"  type="submit" class="btn btn-primary">LogIn</button>
+
+        </form>
+        </div>
+
+        
+        <div class="footer-padding"></div>
+        <div class="footer" style="height: 70px;">
+          <p>Made with ❤ by Pratul</p>
+        </div>
+        </body>
+</html>
+

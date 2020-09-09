@@ -1,0 +1,40 @@
+<%- include('../partials/header'); -%>
+
+<div class="page-content p-5" id="content" style="background-color: aliceblue; margin-left: 20px; margin-top: 100px; width: 1100px;border-radius: 5px;">
+    <table class="table table-striped">
+        <h1 style="text-align: center; font-size: 40px;">Patients list</h1>
+      <thead>
+        <tr>
+          <th scope="col">Treated by<br>(Doctor ID)</th>
+          <th scope="col">Registration No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Address</th>
+          <th scope="col">Symptom</th>
+          <th scope="col">Date and Time</th>
+          
+        </tr>
+      </thead>
+
+      <tbody>
+          <%for(var i=0;i<data.length;i++){ %>
+          <tr>
+              <td><%=data[i].doctor%></td>
+              <td><%=data[i].rollno%></td>
+              <td><%=data[i].name%></td>
+              <td><%=data[i].age%></td>
+              <td><%=data[i].gender%></td>
+              <td><%=data[i].hostel%></td>
+              <td><%=data[i].symptom%> </td>
+              <td><%=moment(data[i].time).format('MMM-DD-YYYY HH:MM')%> </td>
+          </tr>
+          <% } %>
+      </tbody>
+      
+    </table>
+
+  </div>
+
+
+<!-- <%- include("../partials/footer"); -%> -->
